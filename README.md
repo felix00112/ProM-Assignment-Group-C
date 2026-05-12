@@ -1,0 +1,59 @@
+# ProM Assignment Group C
+
+## Getting Started
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/felix00112/ProM-Assignment-Group-C
+cd ProM-Assignment-Group-C
+````
+
+2. Create and activate a virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Start Jupyter Notebook:
+
+```bash
+jupyter notebook
+```
+
+5. Open:
+
+```text
+notebooks/notebook.ipynb
+```
+### Useful Hints
+
+The dataset is located in:
+
+```text
+data/BPI Challenge 2017.xes.gz
+```
+
+The event log can be loaded with:
+
+```python
+import pm4py
+
+log = pm4py.read_xes("../data/BPI Challenge 2017.xes.gz")
+df = pm4py.convert_to_dataframe(log)
+
+df.head()
+```
+
+For PM4Py visualizations, Graphviz may be required:
+
+```bash
+brew install graphviz
+```
