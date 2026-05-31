@@ -4,7 +4,4 @@ __pycache__/
 .env
 .DS_Store
 .idea/
-.venv/
-__pycache__/
-.ipynb_checkpoints/
 *.iml
