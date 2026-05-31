@@ -6,8 +6,7 @@ from pathlib import Path
 # Synonymous Labels
 #--------------------------------------
 SYNONYMS = {
-    "W_Complete application": ["W_Finish application", "W_Submit application", "W_Finalize application"],
-    "W_Call incomplete files": ["W_Follow up files", "W_Chase incomplete files"]
+    "W_Complete application": ["W_Finish application", "W_Finalize application"],
 }
 
 def add_synonymous_labels(df: pd.DataFrame, fraction: float = 0.3) -> pd.DataFrame:

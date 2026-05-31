@@ -37,6 +37,16 @@ polluted_df = add_synonymous_labels(df, fraction=0.3)
 - Replaces their `concept:name` with a randomly chosen synonym
 - All other columns remain unchanged
 
+### Remediation logic
+The remediation step assumes that semantically similar activity labels represent the same conceptual process step. Since the injection process is unknown to the analyst, synonym detection is performed using semantic similarity of event labels (e.g., embeddings or string similarity).
+
+The cleaning approach is:
+1. Compute similarity between all unique concept:name values
+2. Group labels exceeding a similarity threshold
+3. Replace all variants with the most frequent label in the dataset (canonical activity)
+
+**Constraint**: This naive approach considers only semantic similarity of activity labels and ignores the position of events in the trace as well as their predecessor and successor context, which may lead to incorrect merging of process-distinct activities.
+
 ---
 
 ## Pattern 2: Collateral Events
@@ -78,12 +88,21 @@ COLLATERAL_SUBSTEPS = [
     "W_Precheck application: Credit History",
 ]
 
-polluted_df = add_collateral_events(df, fraction=0.3)
+polluted_df = add_collateral_events(df, fraction=0.001)
 ```
 
-### Detection Signal
-- New activity names appearing only within seconds of a known anchor activity
-- Suspiciously low frequency activities clustered around one dominant activity
+### Remediation logic
+Collateral events are identified as fine-grained sub-steps of a single logical activity, which appear in close temporal proximity within the same case. Since the injection logic is unknown, the analyst relies on:
+- Temporal proximity (events occurring within seconds)
+- Semantic relatedness (similar or structured naming patterns, e.g. Parent Activity: Substep)
+
+The cleaning strategy is:
+- Detect groups of events belonging to the same conceptual activity (via dictionary or similarity + prefix patterns)
+- Within each case, identify the earliest occurrence of the group
+- Merge all sub-events into a single canonical activity
+- Remove redundant sub-events while preserving process order
+
+**Problem**: Without knowledge of the underlying injection logic, a downstream analyst may incorrectly interpret the injected collateral sub-steps as a genuinely new high-level activity (e.g., "W_Precheck application"). While the original intent was to remove fine-grained sub-events of "W_Complete application", the analyst only observes fragmented and semantically related labels, leading to the unintended creation of a new activity that does not exist in the true business process.
 
 ---
 
