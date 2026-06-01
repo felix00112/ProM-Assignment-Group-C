@@ -51,8 +51,8 @@ def main():
 
     print("Merging collateral events...")
     result_for_collateral = result[~result['label_1'].isin(SYNONYMOUS_LABELS)]
-    detect_collateral_events = detect_collateral_events(polluted_df, time_window="5s", similarity=True, similarity_df=result_for_collateral, threshold=0.65)
-    print(f"Identified collateral events:\n{set(detect_collateral_events['event_1'].unique()) | set(detect_collateral_events['event_2'].unique())}")
+    collateral_df  = detect_collateral_events(polluted_df, time_window="5s", similarity=True, similarity_df=result_for_collateral, threshold=0.65)
+    print(f"Identified collateral events: {set(collateral_df['event_1'].unique()) | set(collateral_df['event_2'].unique())}")
     COLLATERAL_LABELS_DICT = {
     "W_Precheck application": [
         "W_Precheck application: Applicant Identity",
