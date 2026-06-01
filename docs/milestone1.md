@@ -3,14 +3,17 @@
 ## Project Structure
 
 ```
-project/
+ProM-Assignment-Group-C/
 ├── data/
 │   ├── BPI Challenge 2017.xes.gz        ← original clean log
-│   └── polluted_data/
-│       ├── polluted_log.xes             ← fully polluted log
-│       └── scattered_events_validation.csv ← events removed by scattered case pattern
+│   ├── polluted_data/
+│   │   ├── polluted_log.xes             ← fully polluted log
+│   │   └── scattered_events_validation.csv ← events removed by scattered case pattern
+│   └── cleaned_data/
+│       └── cleaned_log.xes              ← remediated log
 ├── modules/
 │   ├── __init__.py
+│   ├── remediation_logic.py             ← all cleaning functions
 │   └── pollution_logic.py               ← all pollution functions
 ├── notebooks/
 │   └── notebook.ipynb                   ← test notebook
@@ -27,8 +30,7 @@ Two or more activity names are **syntactically different but semantically identi
 ### Implementation
 | Original | Synonym |
 |---|---|
-| `W_Complete application` | `W_Finish application`, `W_Submit application`, `W_Finalize application` |
-| `W_Call incomplete files` | `W_Follow up files`, `W_Chase incomplete files` |
+| `W_Complete application` | `W_Finish application`, `W_Finalize application` |
 
 ```python
 polluted_df = add_synonymous_labels(df, fraction=0.3)
