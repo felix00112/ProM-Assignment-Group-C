@@ -1,5 +1,27 @@
 # ProM Assignment Group C
 
+## Milestone 1 Documentation
+
+This project simulates and resolves common data quality issues in event logs using process mining techniques on the **BPI Challenge 2017 dataset**.
+
+Execute the **pollution script** by running:
+
+```text
+notebooks/polluter-script.ipynb
+```
+
+Execute the **cleaning script** by running:
+```text
+notebooks/cleaning-script.ipynb
+```
+
+The three resulting **datasets** can be found here:
+```text
+data/BPI Challenge 217.xes.gz
+data/noised.xes.gz
+data/Brecovered.xes.gz
+```
+
 ## Getting Started
 
 1. Clone the repository:
@@ -28,7 +50,7 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-5. Open:
+5. Open the milestone related notebooks:
 
 ```text
 notebooks/notebook.ipynb
