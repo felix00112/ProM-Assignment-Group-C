@@ -21,6 +21,7 @@ data/BPI Challenge 217.xes.gz
 data/noised.xes.gz
 data/Brecovered.xes.gz
 ```
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/felix00112/ProM-Assignment-Group-C)
 
 ## Getting Started
 
