@@ -21,6 +21,8 @@ data/BPI Challenge 217.xes.gz
 data/noised.xes.gz
 data/Brecovered.xes.gz
 ```
+In order to run the cleaning script correctly you need to run it within a GitHub Codespace (Secret API Key is needed, which is stored as a secret  in the repo).
+
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/felix00112/ProM-Assignment-Group-C)
 
 ## Getting Started
