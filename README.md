@@ -7,17 +7,17 @@ This project simulates and resolves common data quality issues in event logs usi
 Execute the **pollution script** by running:
 
 ```text
-notebooks/polluter-script.ipynb
+milestone1/polluter-script.ipynb
 ```
 
 Execute the **cleaning script** by running:
 ```text
-notebooks/cleaning-script.ipynb
+milestone1/cleaning-script.ipynb
 ```
 
 The three resulting **datasets** can be found here:
 ```text
-data/BPI Challenge 217.xes.gz
+data/BPI Challenge 217.xes.gz     # clean log
 data/noised.xes.gz
 data/recovered.xes.gz
 ```
