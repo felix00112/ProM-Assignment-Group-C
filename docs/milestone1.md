@@ -1,27 +1,5 @@
 # Event Log Pollution — Milestone 1
 
-## Project Structure
-
-```
-ProM-Assignment-Group-C/
-├── data/
-│   ├── BPI Challenge 2017.xes.gz        ← original clean log
-│   ├── polluted_data/
-│   │   ├── polluted_log.xes             ← fully polluted log
-│   │   └── scattered_events_validation.csv ← events removed by scattered case pattern
-│   └── cleaned_data/
-│       └── cleaned_log.xes              ← remediated log
-├── modules/
-│   ├── __init__.py
-│   ├── remediation_logic.py             ← all cleaning functions
-│   └── pollution_logic.py               ← all pollution functions
-├── notebooks/
-│   └── notebook.ipynb                   ← test notebook
-└── milestone1.py                        ← main script
-```
-
----
-
 ## Pattern 1: Synonymous Labels
 
 ### Problem
@@ -126,3 +104,12 @@ polluted_df = add_scattered_cases(
 - Removes all events whose `concept:name` contains `"valid"` (case-insensitive)
 - Saves removed events to a CSV (the simulated "other system")
 - Returns the remaining log with gaps
+
+## Pattern 4: Unanchored events
+- Problems with timedata
+
+## Pattern 5: Polluted labels
+- Labels are structurally the same, yet are distinct from each other due to differences in the exact values
+
+## Pattern 6: Distorted labels
+- Two or more values are very similar both syntactically and semantically (activity names that have been corrupted or misspelled)
