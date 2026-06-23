@@ -27,6 +27,24 @@ In order to run the cleaning script correctly you need to run it within a GitHub
 
 How to use codespaces: https://docs.github.com/en/codespaces/developing-in-a-codespace/developing-in-a-codespace
 
+## Milestone 2 Documentation
+
+This Milestone applies 3 discovery algorithms on the **BPI Challenge 2017 dataset**.
+
+Relevant jupyter notebooks can be found here:
+
+```text
+milestone2/alpha-algorithm-new.ipynb
+milestone2/heuristic_miner.ipynb
+milestone2/inductive_miner.ipynb
+```
+
+Graph outputs are stored here:
+```text
+data/milestone2/
+```
+
+
 ## Getting Started
 
 1. Clone the repository:
