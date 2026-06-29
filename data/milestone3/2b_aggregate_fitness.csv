@@ -1,0 +1,4 @@
+log,n_cases,n_variants,absolute_total_cost,normalised_fitness
+clean,4255,99,0,1.0
+noised,2718,1279,5753,0.928
+recovered,2554,18,3256,0.9495
