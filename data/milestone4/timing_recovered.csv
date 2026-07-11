@@ -1,0 +1,28 @@
+concept:name,mean_waiting_time_m,mean_processing_time_h
+W_Personal Loan collection,33651.47233,
+A_Cancelled,29749.71089,
+A_Pending,2855.11091,
+W_Shortened completion,2820.27699,
+W_Call after offers,1808.1197,35.95794
+A_Denied,1467.30368,
+A_Incomplete,1055.3399,
+O_Create Offer,918.43266,
+W_Call incomplete files,533.55071,179.56342
+W_Assess potential fraud,532.32548,95.02028
+A_Accepted,472.8623,
+W_Complete application,360.0663,9.52593
+W_Validate application,239.78309,106.99094
+O_Returned,160.1569,
+O_Cancelled,79.26778,
+W_Handle leads,27.98067,0.37469
+O_Accepted,16.73394,
+O_Sent (online only),9.22257,
+A_Complete,6.8528,
+O_Sent (mail and online),4.68254,
+A_Concept,1.43164,
+O_Created,0.25092,
+O_Refused,0.05723,
+A_Validating,0.00914,
+A_Submitted,0.00568,
+A_Create Application,0.00039,
+W_Precheck application,0.0,
